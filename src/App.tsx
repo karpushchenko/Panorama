@@ -1,20 +1,13 @@
-import LoadingOrError from 'components/LoadingOrError'
-import type { ReactElement } from 'react'
-import { lazy, Suspense } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import React from 'react'
+import { RouterProvider } from 'react-router'
 
-const Gallery = lazy(async () => import('pages/Gallery'))
-const Details = lazy(async () => import('pages/Details'))
+import ErrorBoundary from './components/ErrorBoundary'
+import router from './router'
 
-export default function App(): ReactElement {
-	return (
-		<BrowserRouter>
-			<Suspense fallback={<LoadingOrError />}>
-				<Routes>
-					<Route path='/' element={<Gallery />} />
-					<Route path=':fruitName' element={<Details />} />
-				</Routes>
-			</Suspense>
-		</BrowserRouter>
-	)
-}
+const App: React.FC = () => (
+  <ErrorBoundary>
+    <RouterProvider router={router} />
+  </ErrorBoundary>
+)
+App.displayName = 'App'
+export default App

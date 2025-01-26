@@ -1,57 +1,97 @@
-# Vitamin
+# Create React App Vite [![Typecheck](https://github.com/laststance/create-react-app-vite/actions/workflows/typecheck.yml/badge.svg)](https://github.com/laststance/vite-react-ts-alter/actions/workflows/typecheck.yml) [![Test](https://github.com/laststance/create-react-app-vite/actions/workflows/test.yml/badge.svg)](https://github.com/laststance/create-react-app-vite/actions/workflows/test.yml) [![Build](https://github.com/laststance/create-react-app-vite/actions/workflows/build.yml/badge.svg)](https://github.com/laststance/create-react-app-vite/actions/workflows/build.yml) [![Lint](https://github.com/laststance/create-react-app-vite/actions/workflows/lint.yml/badge.svg)](https://github.com/laststance/create-react-app-vite/actions/workflows/lint.yml)
 
-[![codecov](https://codecov.io/gh/wtchnm/Vitamin/branch/main/graph/badge.svg?token=H9BBAKGYI0)](https://codecov.io/gh/wtchnm/Vitamin) ![Test workflow](https://github.com/wtchnm/Vitamin/actions/workflows/test.yml/badge.svg) ![CodeQL workflow](https://github.com/wtchnm/Vitamin/actions/workflows/codeql-analysis.yml/badge.svg) [![Vitamin](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/etow1b&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/etow1b/runs) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/wtchnm/Vitamin/blob/main/LICENSE)
+> Simple CRA style Vite teimpate.  
+> Create plain and lightweight React+TS programming environment.  
+> And a easy migration base for create-react-app to Vite.
 
-> [!WARNING]
-> Project in maintenance mode.
+## [Try this Online!](https://codesandbox.io/p/github/laststance/create-react-app-vite/main?file=%2FREADME.md&workspace=%257B%2522activeFileId%2522%253A%2522clfgsr6q10016g2hjg3xq06lt%2522%252C%2522openFiles%2522%253A%255B%2522%252FREADME.md%2522%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522spaces%2522%253A%257B%2522clfgsra1u000x3b6mbdjl3ahb%2522%253A%257B%2522key%2522%253A%2522clfgsra1u000x3b6mbdjl3ahb%2522%252C%2522name%2522%253A%2522Default%2522%252C%2522devtools%2522%253A%255B%257B%2522key%2522%253A%2522clfgsra1u000y3b6meoz3zcev%2522%252C%2522type%2522%253A%2522PROJECT_SETUP%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522port%2522%253A5173%252C%2522key%2522%253A%2522clfgss4o700dz3b6mz869sru3%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522key%2522%253A%2522clfgss3ug00ba3b6mpaataz0k%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D%257D%252C%2522currentSpace%2522%253A%2522clfgsra1u000x3b6mbdjl3ahb%2522%252C%2522spacesOrder%2522%253A%255B%2522clfgsra1u000x3b6mbdjl3ahb%2522%255D%252C%2522hideCodeEditor%2522%253Afalse%257D)
 
-Opinionated Vite starter template.
+This is a Vite template top of the official [Vite](https://vitejs.dev/) [react-ts](https://stackblitz.com/edit/vitejs-vite-is3dmk?file=index.html&terminal=dev) template(`npm init vite@latest myapp -- --template react-ts`) and some extended setup.  
+I'd like to keep CRA like experience as much as possible, So improving/adding feature Rull Request is really welcome!
 
-## Features
+- Support CRA's [Custom Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/) like `REACT_APP_`.
+- [eslint-config-ts-prefixer](https://github.com/laststance/eslint-config-ts-prefixer). Specialized fixable(`--fix` option) rule sets. Zero extend any recommended for confortable DX.
+- [Vitest](https://vitest.dev/), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/), [MSW](https://mswjs.io/)
+- [tailwindcss](https://tailwindcss.com/)
+- [Github Actions](https://github.com/features/actions)
 
-- [Vite](https://vitejs.dev) with [React](https://reactjs.org), [TypeScript](https://www.typescriptlang.org) and [absolute imports](https://github.com/aleclarson/vite-tsconfig-paths).
-- [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms) and a [Prettier plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) that automatically sorts classes.
-- Use [ESLint](https://eslint.org), [stylelint](https://stylelint.io) and [Prettier](https://prettier.io) on VSCode and before you commit with [Husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged).
-- [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
-- Write unit and integration tests with [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/).
-- Write e2e tests with [Cypress](https://www.cypress.io).
-- GitHub Actions for automatic [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
-- Deploy to [vercel.com](https://vercel.com/) with pre-configured [SPA fallback](https://vercel.com/docs/configuration#routes/advanced/spa-fallback).
+All npm package are keeping least release version powered by [Dependabot](https://github.com/dependabot).
 
-## Getting started
-
-Use this repository as a [GitHub template](https://github.com/wtchnm/Vitamin/generate) or use [degit](https://github.com/Rich-Harris/degit) to clone to your machine with an empty git history:
+# Installation
 
 ```
-npx degit wtchnm/Vitamin#main my-app
+npx degit laststance/create-react-app-vite myapp
 ```
 
-Then, install the dependencies:
+### pnpm
 
-```
+```sh
+cd myapp
 pnpm install
+pnpm validate
+pnpm start
 ```
 
-### Before you start coding
+If you don't need TailwindCSS, run `pnpm remove:tailwind` after npm installed.
 
-- [ ] If you don't plan to use GitHub Actions, delete the `.github` directory.
-- [ ] Clean up the `cypress/e2e/index.spec.ts` file.
-- [ ] Change the `favicon.png`, `apple-touch-icon.png`, `android-chrome-192x192.png` and `android-chrome-512x512.png`. [favicon.io](https://favicon.io) is a cool tool for generating these assets.
-- [ ] In the `src` folder, remove the `__tests__`, `api` and `components` folder and the `types.ts` file.
-- [ ] If you don't plan to use `react-query`, remove the query client logic in the `main.tsx` file.
-- [ ] Change the title, description and theme color in the `index.html` and `vite.config.ts`. The [Inter](https://rsms.me/inter/) font is included, so remove it if you want.
-- [ ] Modify or delete the `LICENSE` file.
-- [ ] Change the `name` field in package.json.
+### Commands
 
-## Scripts
+```sh
+pnpm dev             # start development server
+pnpm start           # start development server
+pnpm validate        # run test,lint,build,typecheck concurrently
+pnpm test            # run jest
+pnpm lint            # run eslint
+pnpm lint:fix        # run eslint with --fix option
+pnpm typecheck       # run TypeScript compiler check
+pnpm build           # build production bundle to 'dist' directly
+pnpm prettier        # run prettier for json|yml|css|md|mdx files
+pnpm clean           # remove 'node_modules' 'yarn.lock' 'dist' completely
+pnpm serve           # launch server for production bundle in local
+pnpm remove:tailwind # remove TailwindCSS
+```
 
-- `pnpm dev` - start a development server with hot reload.
-- `pnpm build` - build for production. The generated files will be on the `dist` folder.
-- `pnpm preview` - locally preview the production build.
-- `pnpm test` - run unit and integration tests related to changed files based on git.
-- `pnpm test:ci` - run all unit and integration tests in CI mode.
-- `pnpm test:e2e` - run all e2e tests with the Cypress Test Runner.
-- `pnpm test:e2e:headless` - run all e2e tests headlessly.
-- `pnpm format` - format all files with Prettier.
-- `pnpm lint` - runs TypeScript, ESLint and Stylelint.
-- `pnpm validate` - runs `lint`, `test:ci` and `test:e2e:ci`.
+# CRA to Vite migration guides
+
+- [Migrate to Vite from Create React App (CRA)](https://www.robinwieruch.de/vite-create-react-app/)
+- [Migrating from Create React App (CRA) to Vite](https://cathalmacdonnacha.com/migrating-from-create-react-app-cra-to-vite)
+- [Migrating a Create React App (CRA) application to Vite](https://www.darraghoriordan.com/2021/05/16/migrating-from-create-react-app-to-vite)
+
+# Background
+
+Simply put, CRA development has stopped as of 2023.
+This has sparked a discussion about replacing CRA with Vite for official documentation recommendations.
+[Replace Create React App recommendation with Vite](https://github.com/reactjs/react.dev/pull/5487)
+Dan Abramov offered some plans for the future of the CRA in his comments, but no direct answers were given.
+https://github.com/reactjs/react.dev/pull/5487#issuecomment-1409720741
+
+The React community is still buzzing around Server Component after May 2023, but there is still a high demand for the React SinglePageAplication starter that the CRA has served in the past, and I was one of the people who needed it, I was one of the people who needed it, so I decided to create a template in Vite that could be used as much as possible like CRA.
+
+# License
+
+MIT
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://ryota-murakami.github.io/"><img src="https://avatars1.githubusercontent.com/u/5501268?s=400&u=7bf6b1580b95930980af2588ef0057f3e9ec1ff8&v=4?s=100" width="100px;" alt="ryota-murakami"/><br /><sub><b>ryota-murakami</b></sub></a><br /><a href="https://github.com/laststance/create-react-app-vite/commits?author=ryota-murakami" title="Code">💻</a> <a href="https://github.com/laststance/create-react-app-vite/commits?author=ryota-murakami" title="Documentation">📖</a> <a href="https://github.com/laststance/create-react-app-vite/commits?author=ryota-murakami" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://hung.dev"><img src="https://avatars.githubusercontent.com/u/8603085?v=4?s=100" width="100px;" alt="Hung Viet Nguyen"/><br /><sub><b>Hung Viet Nguyen</b></sub></a><br /><a href="https://github.com/laststance/create-react-app-vite/commits?author=nvh95" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/shayc"><img src="https://avatars.githubusercontent.com/u/6969966?v=4?s=100" width="100px;" alt="Shay Cojocaru"/><br /><sub><b>Shay Cojocaru</b></sub></a><br /><a href="https://github.com/laststance/create-react-app-vite/commits?author=shayc" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/NateAGeek"><img src="https://avatars.githubusercontent.com/u/1813055?v=4?s=100" width="100px;" alt="NateAGeek"/><br /><sub><b>NateAGeek</b></sub></a><br /><a href="https://github.com/laststance/create-react-app-vite/issues?q=author%3ANateAGeek" title="Bug reports">🐛</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
