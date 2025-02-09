@@ -836,6 +836,11 @@
   dependencies:
     three "^0.169.0"
 
+"@photo-sphere-viewer/markers-plugin@^5.11.5":
+  version "5.11.5"
+  resolved "https://registry.yarnpkg.com/@photo-sphere-viewer/markers-plugin/-/markers-plugin-5.11.5.tgz#9952bef2ddfe28e3ce47c8847485a21bd98313df"
+  integrity sha512-Bheff3hiWTBIm7fxumNeOCgMi8TdHdOUi3t+v7QPbJj1HHFF4fUpsSnGRr3AkEpko+sBlaIDQZLM0p0wg/Q+8Q==
+
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"

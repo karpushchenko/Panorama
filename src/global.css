@@ -28,18 +28,13 @@ code {
     monospace;
 }
 
-.react-logo {
-  margin: auto;
-  height: 30vmin;
-  pointer-events: none;
-  animation: react-logo-spin infinite 20s linear;
+.logo {
+  width: 100px;
+  height: 100px;
 }
 
-@keyframes react-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.psv-marker {
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5px solid;
 }
