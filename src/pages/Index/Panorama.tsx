@@ -14,11 +14,19 @@ interface Room {
   markers: MarkerConfig[]
 }
 
+// Define a marker for the company logo
+const companyLogoMarker: MarkerConfig = {
+  id: 'company-logo',
+  position: { yaw: '0deg', pitch: '-90deg' }, // adjust pitch to position on the floor
+  image: 'logo.svg',
+  size: { width: 300, height: 300 },
+}
+
 const Panorama: React.FC<Props> = memo(() => {
   const panoRef = useRef<ViewerAPI>(null)
   const rooms: Record<string, Room> = {
     livingRoom: {
-      image: 'living_room.jpg', // Ensure this file is in your public assets folder
+      image: 'living_room.jpg',
       markers: [
         {
           id: 'to-bathroom',
@@ -28,10 +36,11 @@ const Panorama: React.FC<Props> = memo(() => {
           data: { target: 'bathroom' },
           size: { width: 50, height: 50 },
         },
+        companyLogoMarker,
       ],
     },
     bathroom: {
-      image: 'bathroom.jpg', // Ensure this file is in your public assets folder
+      image: 'bathroom.jpg',
       markers: [
         {
           id: 'to-living',
@@ -40,6 +49,7 @@ const Panorama: React.FC<Props> = memo(() => {
           html: '🚪',
           data: { target: 'livingRoom' },
         },
+        companyLogoMarker,
       ],
     },
   }
@@ -71,25 +81,20 @@ const Panorama: React.FC<Props> = memo(() => {
       }}
     >
       <h1>{currentRoom}</h1>
-      <ReactPhotoSphereViewer
-        ref={panoRef}
-        src={rooms[currentRoom].image}
-        height="70vh"
-        width="100%"
-        plugins={[
-          [
-            MarkersPlugin,
-            {
-              markers: rooms[currentRoom].markers,
-            },
-          ],
-        ]}
-        container="viewer"
-        onClick={(e, viewer) => {
-          console.log('click', e, viewer)
-        }}
-        onReady={handleReady}
-      />
+      <div style={{ position: 'relative', width: '100%', height: '70vh' }}>
+        <ReactPhotoSphereViewer
+          ref={panoRef}
+          src={rooms[currentRoom].image}
+          height="70vh"
+          width="100%"
+          plugins={[[MarkersPlugin, { markers: rooms[currentRoom].markers }]]}
+          container="viewer"
+          onClick={(e, viewer) => {
+            console.log('click', e, viewer)
+          }}
+          onReady={handleReady}
+        />
+      </div>
     </div>
   )
 })
