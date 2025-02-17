@@ -164,7 +164,7 @@ const Panorama: React.FC<Props> = memo(() => {
         flexDirection: 'column',
       }}
     >
-      <h1>{currentRoom}</h1>
+      <h3 className="mb-1">{currentRoom}</h3>
       <div style={{ position: 'relative', width: '100%', height: '70vh' }}>
         <ReactPhotoSphereViewer
           ref={panoRef}

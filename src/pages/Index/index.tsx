@@ -11,7 +11,7 @@ const Index: React.FC<Props> = memo(() => {
   return (
     <>
       <Box>
-        <h1 className={styles.h1}>Appartment Floor Viewer</h1>
+        <h1 className={styles.h1}>Visualizzatore di appartamenti 3d</h1>
       </Box>
       <Panorama />
     </>
