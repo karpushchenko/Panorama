@@ -22,8 +22,7 @@
     "prettier": "prettier --ignore-unknown --write .",
     "clean": "rimraf node_modules pnpm-lock.yaml dist",
     "validate": "./scripts/validate",
-    "remove:tailwind": "scripts/remove_tailwind.js",
-    "prepare": "husky"
+    "remove:tailwind": "scripts/remove_tailwind.js"
   },
   "dependencies": {
     "@photo-sphere-viewer/core": "^5.12.0",
@@ -66,7 +65,6 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react-hooks": "^5.1.0",
-    "husky": "^9.1.7",
     "jsdom": "^26.0.0",
     "lint-staged": "^15.4.2",
     "msw": "^2.7.0",

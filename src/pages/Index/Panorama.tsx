@@ -18,36 +18,120 @@ interface Room {
 const companyLogoMarker: MarkerConfig = {
   id: 'company-logo',
   position: { yaw: '0deg', pitch: '-90deg' }, // adjust pitch to position on the floor
-  image: 'logo.svg',
+  image: 'logo.png',
   size: { width: 300, height: 300 },
+  tooltip: 'Your Company Logo',
 }
 
 const Panorama: React.FC<Props> = memo(() => {
   const panoRef = useRef<ViewerAPI>(null)
   const rooms: Record<string, Room> = {
-    livingRoom: {
-      image: 'living_room.jpg',
+    Soggiorno: {
+      image: 'livingroom.jpeg',
       markers: [
         {
-          id: 'to-bathroom',
-          image: 'bathroom_preview.jpg',
-          position: { yaw: '-125deg', pitch: '0deg' },
-          tooltip: 'Go to Bathroom',
-          data: { target: 'bathroom' },
-          size: { width: 50, height: 50 },
+          id: 'to-kitchen',
+          image: 'kitchen.jpeg',
+          position: { yaw: '0deg', pitch: '0deg' },
+          tooltip: 'Vai in Cucina',
+          data: { target: 'Cucina' },
+          size: { width: 100, height: 100 },
+        },
+        {
+          id: 'to-bedroom',
+          image: 'bedroom.jpeg',
+          position: { yaw: '50deg', pitch: '0deg' },
+          tooltip: 'Vai in Camera da letto',
+          data: { target: 'Camera da letto' },
+          size: { width: 100, height: 100 },
+        },
+        {
+          id: 'to-storeroom',
+          image: 'storeroom.jpeg',
+          position: { yaw: '31deg', pitch: '0deg' },
+          tooltip: 'Vai in Ripostiglio',
+          data: { target: 'Ripostiglio' },
+          size: { width: 100, height: 100 },
         },
         companyLogoMarker,
       ],
     },
-    bathroom: {
-      image: 'bathroom.jpg',
+    Cucina: {
+      image: 'kitchen.jpeg',
       markers: [
         {
           id: 'to-living',
-          position: { yaw: '-165deg', pitch: '0deg' },
-          tooltip: 'Back to Living Room',
-          html: '🚪',
-          data: { target: 'livingRoom' },
+          position: { yaw: '-10deg', pitch: '0deg' },
+          tooltip: 'Vai in Soggiorno',
+          image: 'livingroom.jpeg',
+          data: { target: 'Soggiorno' },
+          size: { width: 100, height: 100 },
+        },
+        {
+          id: 'to-bedroom',
+          position: { yaw: '280deg', pitch: '0deg' },
+          tooltip: 'Vai in Camera da letto',
+          image: 'bedroom.jpeg',
+          data: { target: 'Camera da letto' },
+          size: { width: 100, height: 100 },
+        },
+        {
+          id: 'to-storeroom',
+          position: { yaw: '245deg', pitch: '0deg' },
+          tooltip: 'Vai in Ripostiglio',
+          image: 'storeroom.jpeg',
+          data: { target: 'Ripostiglio' },
+          size: { width: 100, height: 100 },
+        },
+        companyLogoMarker,
+      ],
+    },
+    Ripostiglio: {
+      image: 'storeroom.jpeg',
+      markers: [
+        {
+          id: 'to-kitchen',
+          position: { yaw: '-60deg', pitch: '0deg' },
+          tooltip: 'Vai in Cucina',
+          image: 'kitchen.jpeg',
+          data: { target: 'Cucina' },
+          size: { width: 100, height: 100 },
+        },
+        {
+          id: 'to-bathroom',
+          position: { yaw: '130deg', pitch: '0deg' },
+          tooltip: 'Vai in Bagno',
+          image: 'bathroom.jpeg',
+          data: { target: 'Bagno' },
+          size: { width: 100, height: 100 },
+        },
+        companyLogoMarker,
+      ],
+    },
+    'Camera da letto': {
+      image: 'bedroom.jpeg',
+      markers: [
+        {
+          id: 'to-kitchen',
+          position: { yaw: '145deg', pitch: '0deg' },
+          tooltip: 'Vai in Cucina',
+          image: 'kitchen.jpeg',
+          data: { target: 'Cucina' },
+          size: { width: 100, height: 100 },
+        },
+        companyLogoMarker,
+      ],
+    },
+    Bagno: {
+      image: 'bathroom.jpeg',
+      markers: [
+        {
+          id: 'to-storeroom',
+          position: { yaw: '10deg', pitch: '0deg' },
+          tooltip: 'Vai in Ripostiglio',
+          image: 'storeroom.jpeg',
+          data: { target: 'Ripostiglio' },
+          size: { width: 100, height: 100 },
         },
         companyLogoMarker,
       ],
@@ -55,7 +139,7 @@ const Panorama: React.FC<Props> = memo(() => {
   }
 
   const [currentRoom, setCurrentRoom] =
-    React.useState<keyof typeof rooms>('livingRoom')
+    React.useState<keyof typeof rooms>('Soggiorno')
 
   const handleReady = (instance: Viewer) => {
     const markersPlugs: MarkersPlugin = instance.getPlugin(MarkersPlugin)
