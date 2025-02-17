@@ -3,7 +3,7 @@
   min-width: 100vw;
   background-color: #282c34;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #937345;
   display: grid;
   place-items: center;
 }

@@ -14,6 +14,14 @@ interface Room {
   markers: MarkerConfig[]
 }
 
+const roomDescription: Record<string, string> = {
+  Soggiorno: 'Soggiorno con divano e TV',
+  Cucina: 'Cucina con tavolo e sedie',
+  Ripostiglio: 'Ripostiglio con scaffali e scatole',
+  'Camera da letto': 'Camera matrimoniale con armadio',
+  Bagno: 'Bagno con doccia',
+}
+
 // Define a marker for the company logo
 const companyLogoMarker: MarkerConfig = {
   id: 'company-logo',
@@ -31,7 +39,7 @@ const Panorama: React.FC<Props> = memo(() => {
       markers: [
         {
           id: 'to-kitchen',
-          image: 'kitchen.jpeg',
+          image: 'kitchen-preview.jpeg',
           position: { yaw: '0deg', pitch: '0deg' },
           tooltip: 'Vai in Cucina',
           data: { target: 'Cucina' },
@@ -39,7 +47,7 @@ const Panorama: React.FC<Props> = memo(() => {
         },
         {
           id: 'to-bedroom',
-          image: 'bedroom.jpeg',
+          image: 'bedroom-preview.jpeg',
           position: { yaw: '50deg', pitch: '0deg' },
           tooltip: 'Vai in Camera da letto',
           data: { target: 'Camera da letto' },
@@ -47,7 +55,7 @@ const Panorama: React.FC<Props> = memo(() => {
         },
         {
           id: 'to-storeroom',
-          image: 'storeroom.jpeg',
+          image: 'storeroom-preview.jpeg',
           position: { yaw: '31deg', pitch: '0deg' },
           tooltip: 'Vai in Ripostiglio',
           data: { target: 'Ripostiglio' },
@@ -63,7 +71,7 @@ const Panorama: React.FC<Props> = memo(() => {
           id: 'to-living',
           position: { yaw: '-10deg', pitch: '0deg' },
           tooltip: 'Vai in Soggiorno',
-          image: 'livingroom.jpeg',
+          image: 'livingroom-preview.jpeg',
           data: { target: 'Soggiorno' },
           size: { width: 100, height: 100 },
         },
@@ -71,7 +79,7 @@ const Panorama: React.FC<Props> = memo(() => {
           id: 'to-bedroom',
           position: { yaw: '280deg', pitch: '0deg' },
           tooltip: 'Vai in Camera da letto',
-          image: 'bedroom.jpeg',
+          image: 'bedroom-preview.jpeg',
           data: { target: 'Camera da letto' },
           size: { width: 100, height: 100 },
         },
@@ -79,7 +87,7 @@ const Panorama: React.FC<Props> = memo(() => {
           id: 'to-storeroom',
           position: { yaw: '245deg', pitch: '0deg' },
           tooltip: 'Vai in Ripostiglio',
-          image: 'storeroom.jpeg',
+          image: 'storeroom-preview.jpeg',
           data: { target: 'Ripostiglio' },
           size: { width: 100, height: 100 },
         },
@@ -93,7 +101,7 @@ const Panorama: React.FC<Props> = memo(() => {
           id: 'to-kitchen',
           position: { yaw: '-60deg', pitch: '0deg' },
           tooltip: 'Vai in Cucina',
-          image: 'kitchen.jpeg',
+          image: 'kitchen-preview.jpeg',
           data: { target: 'Cucina' },
           size: { width: 100, height: 100 },
         },
@@ -101,7 +109,7 @@ const Panorama: React.FC<Props> = memo(() => {
           id: 'to-bathroom',
           position: { yaw: '130deg', pitch: '0deg' },
           tooltip: 'Vai in Bagno',
-          image: 'bathroom.jpeg',
+          image: 'bathroom-preview.jpeg',
           data: { target: 'Bagno' },
           size: { width: 100, height: 100 },
         },
@@ -115,7 +123,7 @@ const Panorama: React.FC<Props> = memo(() => {
           id: 'to-kitchen',
           position: { yaw: '145deg', pitch: '0deg' },
           tooltip: 'Vai in Cucina',
-          image: 'kitchen.jpeg',
+          image: 'kitchen-preview.jpeg',
           data: { target: 'Cucina' },
           size: { width: 100, height: 100 },
         },
@@ -129,7 +137,7 @@ const Panorama: React.FC<Props> = memo(() => {
           id: 'to-storeroom',
           position: { yaw: '10deg', pitch: '0deg' },
           tooltip: 'Vai in Ripostiglio',
-          image: 'storeroom.jpeg',
+          image: 'storeroom-preview.jpeg',
           data: { target: 'Ripostiglio' },
           size: { width: 100, height: 100 },
         },
@@ -165,6 +173,9 @@ const Panorama: React.FC<Props> = memo(() => {
       }}
     >
       <h3 className="mb-1">{currentRoom}</h3>
+      {currentRoom in roomDescription && (
+        <p className="room-description mb-1">{roomDescription[currentRoom]}</p>
+      )}
       <div style={{ position: 'relative', width: '100%', height: '70vh' }}>
         <ReactPhotoSphereViewer
           ref={panoRef}

@@ -13,6 +13,7 @@ body {
 #root {
   height: 100%;
   width: 100%;
+  color: #937345;
 }
 
 body {
@@ -36,8 +37,16 @@ code {
 }
 
 div.psv-marker {
-  background-color: #fff;
+  background-color: #937345;
   background-size: cover;
   border-radius: 50%;
   border: 5px solid;
+}
+
+.room-description {
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
 }
